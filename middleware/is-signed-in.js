@@ -6,3 +6,4 @@ const isSignedIn = (req, res, next) => {
 };
 
 module.exports = isSignedIn;
+//checked if you are signed in

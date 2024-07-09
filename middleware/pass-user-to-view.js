@@ -6,3 +6,5 @@ const passUserToView = (req, res, next) => {
 }
 
 module.exports = passUserToView
+
+//if a user is signed in, it will set the user as the user key and local object. 
