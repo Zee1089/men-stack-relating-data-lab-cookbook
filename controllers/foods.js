@@ -20,9 +20,9 @@ router.get('/', async (req, res) => {
 //   });
 
 
-// router.get('/new', async (req, res) => {
-//     res.render('foods/new.ejs');
-//   });
+router.get('/new', async (req, res) => {
+    res.render('foods/new.ejs');
+  });
 
 
 
