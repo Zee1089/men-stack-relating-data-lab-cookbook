@@ -10,5 +10,13 @@
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <h1><%= food.name %> </h1>
+  <!-- We'll use method-override to allow us to hit a delete route: -->
+  <form
+    action="/users/<%= user._id %>/foods/<%= food._id %>?_method=DELETE"
+    method="POST"
+  >
+    <button type="submit">Delete this FOOD from the PANTRY</button>
+  </form>
+  
 </body>
 </html>

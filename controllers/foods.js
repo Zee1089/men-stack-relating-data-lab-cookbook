@@ -63,5 +63,24 @@ router.get('/:foodId', async (req, res) => {
   }
 });
 
+// controllers/applications.js
+
+router.delete('/:foodId', async (req, res) => {
+  try {
+    // Look up the user from req.session
+    const currentUser = await User.findById(req.session.user._id);
+
+    currentUser.foods.id(req.params.foodId).deleteOne();
+    // Save changes to the user
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/foods`);
+  } catch (error) {
+    // If any errors, log them and redirect back home
+    console.log(error);
+    res.redirect('/')
+  }
+});
+
+
 
 module.exports = router;
